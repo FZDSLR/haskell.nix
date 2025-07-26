@@ -346,6 +346,8 @@ let
                 then "ArchAArch32"
               else if pkgs.stdenv.targetPlatform.isJavaScript
                 then "ArchJavaScript"
+              else if pkgs.stdenv.targetPlatform.isLoongArch64
+                then "ArchLoongArch64"
               else throw "Unknown target arch ${pkgs.stdenv.targetPlatform.config}"
           }")'
           echo ',("target platform string","${platformString pkgs.stdenv.targetPlatform}")'
